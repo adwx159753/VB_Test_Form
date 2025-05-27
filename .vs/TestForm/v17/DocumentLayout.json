@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form_Main.vb [\u8A2D\u8A08]",
+              "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
+              "RelativeDocumentMoniker": "TestForm\\Form_Main.vb",
+              "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb [\u8A2D\u8A08]",
+              "RelativeToolTip": "TestForm\\Form_Main.vb [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-27T06:22:46.816Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

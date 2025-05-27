@@ -149,7 +149,7 @@ Public Class Form_Test
         Select Case scr.cmd
             Case 0
                 ' cmd 0
-                Form_Main.Get_Arduino_Version()
+                Form_Panel.Get_Arduino_Version()
                 Debug.WriteLine("cmd 0!")
             Case 1
                 ' cmd 1

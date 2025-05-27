@@ -64,3 +64,4 @@ C:\Users\IEC140367\source\repos\TestForm\TestForm\bin\Debug\net8.0-windows\runti
 C:\Users\IEC140367\source\repos\TestForm\TestForm\obj\Debug\net8.0-windows\TestForm.vbproj.AssemblyReference.cache
 C:\Users\IEC140367\source\repos\TestForm\TestForm\obj\Debug\net8.0-windows\TestForm.vbproj.Up2Date
 C:\Users\IEC140367\source\repos\TestForm\TestForm\obj\Debug\net8.0-windows\TestForm.Form_Test.resources
+C:\Users\IEC140367\source\repos\TestForm\TestForm\obj\Debug\net8.0-windows\TestForm.Form_Panel.resources
