@@ -3203,11 +3203,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IEC140367\\source\\repos\\TestForm\\TestForm\\TestForm.vbproj",
+      "projectUniqueName": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\TestForm.vbproj",
       "projectName": "TestForm",
-      "projectPath": "C:\\Users\\IEC140367\\source\\repos\\TestForm\\TestForm\\TestForm.vbproj",
+      "projectPath": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\TestForm.vbproj",
       "packagesPath": "C:\\Users\\IEC140367\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IEC140367\\source\\repos\\TestForm\\TestForm\\obj\\",
+      "outputPath": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

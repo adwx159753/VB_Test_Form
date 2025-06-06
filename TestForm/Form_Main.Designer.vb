@@ -40,6 +40,9 @@ Partial Class Form_Main
         InputLogText = New TextBox()
         COMstr = New ComboBox()
         BAUstr = New ComboBox()
+        Clear = New Button()
+        ViewMode = New ComboBox()
+        Label1 = New Label()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -83,7 +86,7 @@ Partial Class Form_Main
         ' comport_info
         ' 
         comport_info.AutoSize = True
-        comport_info.Location = New Point(628, 39)
+        comport_info.Location = New Point(418, 39)
         comport_info.Name = "comport_info"
         comport_info.Size = New Size(83, 15)
         comport_info.TabIndex = 6
@@ -197,15 +200,49 @@ Partial Class Form_Main
         BAUstr.TabIndex = 8
         BAUstr.Text = "115200"
         ' 
+        ' Clear
+        ' 
+        Clear.AutoSize = True
+        Clear.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        Clear.Location = New Point(652, 34)
+        Clear.Name = "Clear"
+        Clear.Size = New Size(54, 25)
+        Clear.TabIndex = 5
+        Clear.Text = "CLAER"
+        Clear.UseVisualStyleBackColor = False
+        ' 
+        ' ViewMode
+        ' 
+        ViewMode.FormattingEnabled = True
+        ViewMode.Items.AddRange(New Object() {"文字", "16進制"})
+        ViewMode.Location = New Point(576, 36)
+        ViewMode.Name = "ViewMode"
+        ViewMode.RightToLeft = RightToLeft.No
+        ViewMode.Size = New Size(70, 23)
+        ViewMode.TabIndex = 8
+        ViewMode.Text = "文字"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(519, 39)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(55, 15)
+        Label1.TabIndex = 6
+        Label1.Text = "檢視模式"
+        Label1.TextAlign = ContentAlignment.TopRight
+        ' 
         ' Form_Main
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.Disable
         ClientSize = New Size(739, 477)
+        Controls.Add(ViewMode)
         Controls.Add(BAUstr)
         Controls.Add(COMstr)
         Controls.Add(Panel5)
+        Controls.Add(Label1)
         Controls.Add(comport_info)
         Controls.Add(Label10)
         Controls.Add(Label9)
@@ -214,6 +251,7 @@ Partial Class Form_Main
         Controls.Add(InputText)
         Controls.Add(Button7)
         Controls.Add(comport_Set)
+        Controls.Add(Clear)
         Controls.Add(Connect)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
@@ -241,5 +279,8 @@ Partial Class Form_Main
     Friend WithEvents InputLogText As TextBox
     Friend WithEvents COMstr As ComboBox
     Friend WithEvents BAUstr As ComboBox
+    Friend WithEvents Clear As Button
+    Friend WithEvents ViewMode As ComboBox
+    Friend WithEvents Label1 As Label
 
 End Class

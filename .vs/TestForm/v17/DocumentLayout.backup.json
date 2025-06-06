@@ -18,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form_Main.vb",
+              "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
+              "RelativeDocumentMoniker": "TestForm\\Form_Main.vb",
+              "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
+              "RelativeToolTip": "TestForm\\Form_Main.vb",
+              "ViewState": "AgIAADYAAAAAAAAAAAAswEUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-28T02:20:45.734Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -31,19 +44,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-27T06:22:46.816Z",
               "EditorCaption": " [\u8A2D\u8A08]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form_Main.vb",
-              "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
-              "RelativeDocumentMoniker": "TestForm\\Form_Main.vb",
-              "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
-              "RelativeToolTip": "TestForm\\Form_Main.vb",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwG8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-05-28T02:20:45.734Z",
-              "EditorCaption": ""
             }
           ]
         }

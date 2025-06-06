@@ -61,20 +61,25 @@ Public Class Form_Main
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Event when the Form has been called
         LoadComPorts() ' 加載 COM Port 清單
-        COMstr.SelectedIndex = 1
+        Try
+            COMstr.SelectedIndex = 1
+        Catch ex As Exception
+            ' MessageBox.Show(String.Format("Form_Load: 未偵測到裝置，請連接"))
+        Finally
+            ' Do nothging
+        End Try
         BAUstr.SelectedIndex = 0
         comport_info.Text = COMstr.Text + ", "
         comport_info.Text += BAUstr.Text
         RS232 = New SerialPort(COMstr.Text, Val(BAUstr.Text), Parity.None, 8, StopBits.One)
 
-        Debug.WriteLine("Start!")
         'If Not RS232.IsOpen Then
         '    Try
         '        RS232.Open()
-        '        receving = True
-        '        T = New Thread(AddressOf Task_Receive)
-        '        T.IsBackground = True
-        '        T.Start()
+        receving = True
+        T = New Thread(AddressOf Task_Receive)
+        T.IsBackground = True
+        T.Start()
         '    Catch ex As Exception
         '        MessageBox.Show(String.Format("Form_Load: 請連接" + COMstr.Text))
         '    Finally
@@ -83,6 +88,8 @@ Public Class Form_Main
         'End If
 
         send_struct_queue_init()
+
+        Debug.WriteLine("Start!")
     End Sub
     ' Use Thread to run this unlimit while loop.
     Private Sub Task_Receive()
@@ -90,10 +97,11 @@ Public Class Form_Main
             If RS232.IsOpen = True Then
                 Try
                     If RS232.BytesToRead <> 0 Then
+                        'Debug.WriteLine("Get!")
                         Get_CMD()
                     End If
                 Catch ex As Exception
-                    MessageBox.Show(String.Format("連線中斷，請重新連接" + COMstr.Text))
+                    MessageBox.Show(String.Format("連線中斷，請重新連接"))
                 Finally
                     'receving = False
                 End Try
@@ -103,14 +111,20 @@ Public Class Form_Main
 
     Private Sub Get_CMD()
         Dim Str As Byte = RS232.ReadByte()
-        Debug.Write("Receive: ")
-        Debug.WriteLine(Str)
+        'Debug.Write("Receive: ")
+        'Debug.WriteLine(Str)
 
         Dim MaxLines As Integer = 100 ' 定義最大行數
 
         ReceiveText.Invoke(Sub()
                                ' 使用 AppendText 高效添加文字
-                               ReceiveText.AppendText(ChrW(Str))
+
+                               If ViewMode.SelectedIndex = 0 Then
+                                   ReceiveText.AppendText(ChrW(Str))
+                               Else
+                                   ReceiveText.AppendText("0x" + Str.ToString("X") + "-")
+                               End If
+
 
                                ' 限制行數，保留最近的 MaxLines 行
                                Dim lines As String() = ReceiveText.Lines
@@ -241,9 +255,9 @@ Public Class Form_Main
         End Try
     End Sub
 
-    Private Sub COMstr_SelectedIndexChanged(sender As Object, e As EventArgs) Handles COMstr.SelectedIndexChanged
+    Private Sub COMstr_SelectedIndexChanged(sender As Object, e As EventArgs) Handles COMstr.Click
         ' 加載可用的 COM Port 到 ComboBox
-        'LoadComPorts()
+        LoadComPorts()
     End Sub
     ' ------------------------------------------------------------------------------
     ' ---------------------------- [Data Sending Field] ---------------------------|
@@ -307,7 +321,7 @@ Public Class Form_Main
                     RS232.Write(rec_buf.ToArray(), 0, dat_len)
                     ' 輸出中文用
                     result = System.Text.Encoding.UTF8.GetString(rec_buf.ToArray())
-                End If
+                    End If
 
                 InputLogText.Invoke(Sub()
                                         ' 使用 AppendText 高效添加文字
@@ -405,5 +419,9 @@ Public Class Form_Main
 
     Private Sub FormPanelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormPanelToolStripMenuItem.Click
         Form_Panel.Show()
+    End Sub
+
+    Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
+        ReceiveText.Text = ""
     End Sub
 End Class
