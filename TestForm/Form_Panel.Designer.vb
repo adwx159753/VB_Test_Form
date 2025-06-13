@@ -24,9 +24,23 @@ Partial Class Form_Panel
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Panel))
         Panel1 = New Panel()
-        CheckBox1 = New CheckBox()
+        R_c = New CheckBox()
+        up_c = New CheckBox()
+        SRC_c = New CheckBox()
+        BND_C = New CheckBox()
+        next_c = New CheckBox()
+        last_c = New CheckBox()
+        DISP_c = New CheckBox()
+        music_c = New CheckBox()
+        dn_c = New CheckBox()
+        B1_c = New CheckBox()
+        B2_c = New CheckBox()
+        B3_c = New CheckBox()
+        B4_c = New CheckBox()
+        B5_c = New CheckBox()
+        B6_c = New CheckBox()
+        USB = New CheckBox()
         AUX = New CheckBox()
-        Panel4 = New Panel()
         Button6 = New Button()
         dn = New Button()
         Button5 = New Button()
@@ -61,6 +75,9 @@ Partial Class Form_Panel
         TextBox1 = New TextBox()
         System_Version = New Label()
         Getversion = New Button()
+        SendButtonCmd = New Button()
+        Hold = New CheckBox()
+        Button7 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -69,9 +86,23 @@ Partial Class Form_Panel
         Panel1.AllowDrop = True
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Center
-        Panel1.Controls.Add(CheckBox1)
+        Panel1.Controls.Add(R_c)
+        Panel1.Controls.Add(up_c)
+        Panel1.Controls.Add(SRC_c)
+        Panel1.Controls.Add(BND_C)
+        Panel1.Controls.Add(next_c)
+        Panel1.Controls.Add(last_c)
+        Panel1.Controls.Add(DISP_c)
+        Panel1.Controls.Add(music_c)
+        Panel1.Controls.Add(dn_c)
+        Panel1.Controls.Add(B1_c)
+        Panel1.Controls.Add(B2_c)
+        Panel1.Controls.Add(B3_c)
+        Panel1.Controls.Add(B4_c)
+        Panel1.Controls.Add(B5_c)
+        Panel1.Controls.Add(B6_c)
+        Panel1.Controls.Add(USB)
         Panel1.Controls.Add(AUX)
-        Panel1.Controls.Add(Panel4)
         Panel1.Controls.Add(Button6)
         Panel1.Controls.Add(dn)
         Panel1.Controls.Add(Button5)
@@ -92,15 +123,165 @@ Partial Class Form_Panel
         Panel1.Size = New Size(702, 201)
         Panel1.TabIndex = 5
         ' 
-        ' CheckBox1
+        ' R_c
         ' 
-        CheckBox1.AllowDrop = True
-        CheckBox1.Anchor = AnchorStyles.None
-        CheckBox1.Location = New Point(654, 71)
-        CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(15, 14)
-        CheckBox1.TabIndex = 6
-        CheckBox1.UseVisualStyleBackColor = True
+        R_c.AllowDrop = True
+        R_c.Anchor = AnchorStyles.None
+        R_c.Location = New Point(203, 109)
+        R_c.Name = "R_c"
+        R_c.Size = New Size(15, 14)
+        R_c.TabIndex = 6
+        R_c.UseVisualStyleBackColor = True
+        ' 
+        ' up_c
+        ' 
+        up_c.AllowDrop = True
+        up_c.Anchor = AnchorStyles.None
+        up_c.Location = New Point(232, 56)
+        up_c.Name = "up_c"
+        up_c.Size = New Size(15, 14)
+        up_c.TabIndex = 6
+        up_c.UseVisualStyleBackColor = True
+        ' 
+        ' SRC_c
+        ' 
+        SRC_c.AllowDrop = True
+        SRC_c.Anchor = AnchorStyles.None
+        SRC_c.Location = New Point(53, 77)
+        SRC_c.Name = "SRC_c"
+        SRC_c.Size = New Size(15, 14)
+        SRC_c.TabIndex = 6
+        SRC_c.UseVisualStyleBackColor = True
+        ' 
+        ' BND_C
+        ' 
+        BND_C.AllowDrop = True
+        BND_C.Anchor = AnchorStyles.None
+        BND_C.Location = New Point(127, 77)
+        BND_C.Name = "BND_C"
+        BND_C.Size = New Size(15, 14)
+        BND_C.TabIndex = 6
+        BND_C.UseVisualStyleBackColor = True
+        ' 
+        ' next_c
+        ' 
+        next_c.AllowDrop = True
+        next_c.Anchor = AnchorStyles.None
+        next_c.Location = New Point(84, 120)
+        next_c.Name = "next_c"
+        next_c.Size = New Size(15, 14)
+        next_c.TabIndex = 6
+        next_c.UseVisualStyleBackColor = True
+        ' 
+        ' last_c
+        ' 
+        last_c.AllowDrop = True
+        last_c.Anchor = AnchorStyles.None
+        last_c.Location = New Point(22, 120)
+        last_c.Name = "last_c"
+        last_c.Size = New Size(15, 14)
+        last_c.TabIndex = 6
+        last_c.UseVisualStyleBackColor = True
+        ' 
+        ' DISP_c
+        ' 
+        DISP_c.AllowDrop = True
+        DISP_c.Anchor = AnchorStyles.None
+        DISP_c.Location = New Point(64, 168)
+        DISP_c.Name = "DISP_c"
+        DISP_c.Size = New Size(15, 14)
+        DISP_c.TabIndex = 6
+        DISP_c.UseVisualStyleBackColor = True
+        ' 
+        ' music_c
+        ' 
+        music_c.AllowDrop = True
+        music_c.Anchor = AnchorStyles.None
+        music_c.Location = New Point(122, 168)
+        music_c.Name = "music_c"
+        music_c.Size = New Size(15, 14)
+        music_c.TabIndex = 6
+        music_c.UseVisualStyleBackColor = True
+        ' 
+        ' dn_c
+        ' 
+        dn_c.AllowDrop = True
+        dn_c.Anchor = AnchorStyles.None
+        dn_c.Location = New Point(232, 168)
+        dn_c.Name = "dn_c"
+        dn_c.Size = New Size(15, 14)
+        dn_c.TabIndex = 6
+        dn_c.UseVisualStyleBackColor = True
+        ' 
+        ' B1_c
+        ' 
+        B1_c.AllowDrop = True
+        B1_c.Anchor = AnchorStyles.None
+        B1_c.Location = New Point(297, 183)
+        B1_c.Name = "B1_c"
+        B1_c.Size = New Size(15, 14)
+        B1_c.TabIndex = 6
+        B1_c.UseVisualStyleBackColor = True
+        ' 
+        ' B2_c
+        ' 
+        B2_c.AllowDrop = True
+        B2_c.Anchor = AnchorStyles.None
+        B2_c.Location = New Point(356, 183)
+        B2_c.Name = "B2_c"
+        B2_c.Size = New Size(15, 14)
+        B2_c.TabIndex = 6
+        B2_c.UseVisualStyleBackColor = True
+        ' 
+        ' B3_c
+        ' 
+        B3_c.AllowDrop = True
+        B3_c.Anchor = AnchorStyles.None
+        B3_c.Location = New Point(408, 183)
+        B3_c.Name = "B3_c"
+        B3_c.Size = New Size(15, 14)
+        B3_c.TabIndex = 6
+        B3_c.UseVisualStyleBackColor = True
+        ' 
+        ' B4_c
+        ' 
+        B4_c.AllowDrop = True
+        B4_c.Anchor = AnchorStyles.None
+        B4_c.Location = New Point(465, 183)
+        B4_c.Name = "B4_c"
+        B4_c.Size = New Size(15, 14)
+        B4_c.TabIndex = 6
+        B4_c.UseVisualStyleBackColor = True
+        ' 
+        ' B5_c
+        ' 
+        B5_c.AllowDrop = True
+        B5_c.Anchor = AnchorStyles.None
+        B5_c.Location = New Point(517, 183)
+        B5_c.Name = "B5_c"
+        B5_c.Size = New Size(15, 14)
+        B5_c.TabIndex = 6
+        B5_c.UseVisualStyleBackColor = True
+        ' 
+        ' B6_c
+        ' 
+        B6_c.AllowDrop = True
+        B6_c.Anchor = AnchorStyles.None
+        B6_c.Location = New Point(575, 183)
+        B6_c.Name = "B6_c"
+        B6_c.Size = New Size(15, 14)
+        B6_c.TabIndex = 6
+        B6_c.UseVisualStyleBackColor = True
+        ' 
+        ' USB
+        ' 
+        USB.AllowDrop = True
+        USB.Anchor = AnchorStyles.None
+        USB.Location = New Point(654, 71)
+        USB.Name = "USB"
+        USB.Size = New Size(15, 14)
+        USB.TabIndex = 6
+        USB.UseVisualStyleBackColor = True
         ' 
         ' AUX
         ' 
@@ -111,16 +292,6 @@ Partial Class Form_Panel
         AUX.Size = New Size(15, 14)
         AUX.TabIndex = 6
         AUX.UseVisualStyleBackColor = True
-        ' 
-        ' Panel4
-        ' 
-        Panel4.AllowDrop = True
-        Panel4.Anchor = AnchorStyles.None
-        Panel4.BackColor = Color.Lime
-        Panel4.Location = New Point(509, 57)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(32, 12)
-        Panel4.TabIndex = 2
         ' 
         ' Button6
         ' 
@@ -470,12 +641,49 @@ Partial Class Form_Panel
         Getversion.Text = "Get"
         Getversion.UseVisualStyleBackColor = False
         ' 
+        ' SendButtonCmd
+        ' 
+        SendButtonCmd.AutoSize = True
+        SendButtonCmd.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        SendButtonCmd.Location = New Point(768, 236)
+        SendButtonCmd.Name = "SendButtonCmd"
+        SendButtonCmd.Size = New Size(50, 25)
+        SendButtonCmd.TabIndex = 24
+        SendButtonCmd.Text = "Send"
+        SendButtonCmd.UseVisualStyleBackColor = False
+        ' 
+        ' Hold
+        ' 
+        Hold.AutoSize = True
+        Hold.Location = New Point(697, 240)
+        Hold.Name = "Hold"
+        Hold.Size = New Size(69, 19)
+        Hold.TabIndex = 26
+        Hold.Text = "Hold 3s"
+        Hold.UseVisualStyleBackColor = True
+        ' 
+        ' Button7
+        ' 
+        Button7.AutoSize = True
+        Button7.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        Button7.Location = New Point(12, 240)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(50, 25)
+        Button7.TabIndex = 24
+        Button7.Text = "Clean"
+        Button7.UseVisualStyleBackColor = False
+        ' 
         ' Form_Panel
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(850, 249)
+        AutoValidate = AutoValidate.Disable
+        CausesValidation = False
+        ClientSize = New Size(833, 269)
+        Controls.Add(Hold)
         Controls.Add(System_Version)
+        Controls.Add(Button7)
+        Controls.Add(SendButtonCmd)
         Controls.Add(Getversion)
         Controls.Add(Label18)
         Controls.Add(Label17)
@@ -495,17 +703,19 @@ Partial Class Form_Panel
         Controls.Add(TextBox2)
         Controls.Add(TextBox1)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Name = "Form_Panel"
-        Text = "Form1"
+        SizeGripStyle = SizeGripStyle.Show
+        Text = "Form Panel"
+        TopMost = True
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents USB As CheckBox
     Friend WithEvents AUX As CheckBox
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents Button6 As Button
     Friend WithEvents dn As Button
     Friend WithEvents Button5 As Button
@@ -540,4 +750,22 @@ Partial Class Form_Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents System_Version As Label
     Friend WithEvents Getversion As Button
+    Friend WithEvents SendButtonCmd As Button
+    Friend WithEvents B6_c As CheckBox
+    Friend WithEvents B2_c As CheckBox
+    Friend WithEvents B3_c As CheckBox
+    Friend WithEvents B4_c As CheckBox
+    Friend WithEvents B5_c As CheckBox
+    Friend WithEvents R_c As CheckBox
+    Friend WithEvents up_c As CheckBox
+    Friend WithEvents SRC_c As CheckBox
+    Friend WithEvents BND_C As CheckBox
+    Friend WithEvents next_c As CheckBox
+    Friend WithEvents last_c As CheckBox
+    Friend WithEvents DISP_c As CheckBox
+    Friend WithEvents music_c As CheckBox
+    Friend WithEvents dn_c As CheckBox
+    Friend WithEvents B1_c As CheckBox
+    Friend WithEvents Hold As CheckBox
+    Friend WithEvents Button7 As Button
 End Class

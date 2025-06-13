@@ -25,7 +25,6 @@ Partial Class Form_Main
         components = New ComponentModel.Container()
         Label9 = New Label()
         Label10 = New Label()
-        Connect = New Button()
         Panel5 = New Panel()
         comport_info = New Label()
         comport_Set = New Button()
@@ -34,6 +33,7 @@ Partial Class Form_Main
         Test1ToolStripMenuItem = New ToolStripMenuItem()
         FormTestToolStripMenuItem = New ToolStripMenuItem()
         FormPanelToolStripMenuItem = New ToolStripMenuItem()
+        FormDataGridViewStripMenuItem = New ToolStripMenuItem()
         InputText = New TextBox()
         Button7 = New Button()
         ReceiveText = New TextBox()
@@ -49,7 +49,7 @@ Partial Class Form_Main
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(156, 39)
+        Label9.Location = New Point(112, 39)
         Label9.Name = "Label9"
         Label9.Size = New Size(37, 15)
         Label9.TabIndex = 6
@@ -58,27 +58,16 @@ Partial Class Form_Main
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(266, 39)
+        Label10.Location = New Point(244, 39)
         Label10.Name = "Label10"
         Label10.Size = New Size(70, 15)
         Label10.TabIndex = 6
         Label10.Text = "BAUDRATE"
         ' 
-        ' Connect
-        ' 
-        Connect.AutoSize = True
-        Connect.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        Connect.Location = New Point(16, 34)
-        Connect.Name = "Connect"
-        Connect.Size = New Size(50, 25)
-        Connect.TabIndex = 5
-        Connect.Text = "ON"
-        Connect.UseVisualStyleBackColor = False
-        ' 
         ' Panel5
         ' 
         Panel5.BackColor = Color.Red
-        Panel5.Location = New Point(123, 37)
+        Panel5.Location = New Point(79, 37)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(28, 19)
         Panel5.TabIndex = 2
@@ -86,7 +75,7 @@ Partial Class Form_Main
         ' comport_info
         ' 
         comport_info.AutoSize = True
-        comport_info.Location = New Point(418, 39)
+        comport_info.Location = New Point(396, 39)
         comport_info.Name = "comport_info"
         comport_info.Size = New Size(83, 15)
         comport_info.TabIndex = 6
@@ -97,11 +86,11 @@ Partial Class Form_Main
         ' 
         comport_Set.AutoSize = True
         comport_Set.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        comport_Set.Location = New Point(67, 34)
+        comport_Set.Location = New Point(23, 34)
         comport_Set.Name = "comport_Set"
         comport_Set.Size = New Size(50, 25)
         comport_Set.TabIndex = 5
-        comport_Set.Text = "Set"
+        comport_Set.Text = "ON"
         comport_Set.UseVisualStyleBackColor = False
         ' 
         ' Timer1
@@ -116,13 +105,13 @@ Partial Class Form_Main
         MenuStrip1.Items.AddRange(New ToolStripItem() {Test1ToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(739, 24)
+        MenuStrip1.Size = New Size(710, 24)
         MenuStrip1.TabIndex = 7
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' Test1ToolStripMenuItem
         ' 
-        Test1ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormTestToolStripMenuItem, FormPanelToolStripMenuItem})
+        Test1ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormTestToolStripMenuItem, FormPanelToolStripMenuItem, FormDataGridViewStripMenuItem})
         Test1ToolStripMenuItem.Name = "Test1ToolStripMenuItem"
         Test1ToolStripMenuItem.Size = New Size(48, 20)
         Test1ToolStripMenuItem.Text = "Form"
@@ -130,28 +119,36 @@ Partial Class Form_Main
         ' FormTestToolStripMenuItem
         ' 
         FormTestToolStripMenuItem.Name = "FormTestToolStripMenuItem"
-        FormTestToolStripMenuItem.Size = New Size(139, 22)
+        FormTestToolStripMenuItem.Size = New Size(186, 22)
         FormTestToolStripMenuItem.Text = "Form_Test"
         ' 
         ' FormPanelToolStripMenuItem
         ' 
         FormPanelToolStripMenuItem.Name = "FormPanelToolStripMenuItem"
-        FormPanelToolStripMenuItem.Size = New Size(139, 22)
+        FormPanelToolStripMenuItem.Size = New Size(186, 22)
         FormPanelToolStripMenuItem.Text = "Form_Panel"
+        ' 
+        ' FormDataGridViewStripMenuItem
+        ' 
+        FormDataGridViewStripMenuItem.Name = "FormDataGridViewStripMenuItem"
+        FormDataGridViewStripMenuItem.Size = New Size(186, 22)
+        FormDataGridViewStripMenuItem.Text = "Form_DataGridView"
         ' 
         ' InputText
         ' 
-        InputText.Location = New Point(16, 442)
+        InputText.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        InputText.Location = New Point(22, 454)
         InputText.Name = "InputText"
-        InputText.Size = New Size(648, 23)
+        InputText.Size = New Size(621, 23)
         InputText.TabIndex = 5
         InputText.Text = "AT+I2SCFG=1" & vbLf & " "
         ' 
         ' Button7
         ' 
+        Button7.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         Button7.AutoSize = True
         Button7.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        Button7.Location = New Point(670, 440)
+        Button7.Location = New Point(648, 452)
         Button7.Name = "Button7"
         Button7.Size = New Size(50, 25)
         Button7.TabIndex = 5
@@ -161,40 +158,42 @@ Partial Class Form_Main
         ' ReceiveText
         ' 
         ReceiveText.AllowDrop = True
+        ReceiveText.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         ReceiveText.BackColor = SystemColors.ButtonHighlight
-        ReceiveText.Location = New Point(16, 65)
+        ReceiveText.Location = New Point(23, 65)
         ReceiveText.Multiline = True
         ReceiveText.Name = "ReceiveText"
         ReceiveText.ReadOnly = True
         ReceiveText.ScrollBars = ScrollBars.Both
-        ReceiveText.Size = New Size(704, 302)
+        ReceiveText.Size = New Size(669, 314)
         ReceiveText.TabIndex = 5
         ' 
         ' InputLogText
         ' 
         InputLogText.AllowDrop = True
+        InputLogText.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         InputLogText.BackColor = SystemColors.ButtonHighlight
-        InputLogText.Location = New Point(16, 373)
+        InputLogText.Location = New Point(23, 385)
         InputLogText.Multiline = True
         InputLogText.Name = "InputLogText"
         InputLogText.ReadOnly = True
         InputLogText.ScrollBars = ScrollBars.Both
-        InputLogText.Size = New Size(704, 63)
+        InputLogText.Size = New Size(669, 63)
         InputLogText.TabIndex = 5
         ' 
         ' COMstr
         ' 
         COMstr.FormattingEnabled = True
-        COMstr.Location = New Point(199, 36)
+        COMstr.Location = New Point(155, 36)
         COMstr.Name = "COMstr"
-        COMstr.Size = New Size(61, 23)
+        COMstr.Size = New Size(83, 23)
         COMstr.TabIndex = 8
         ' 
         ' BAUstr
         ' 
         BAUstr.FormattingEnabled = True
         BAUstr.Items.AddRange(New Object() {"115200", "57600", "38400", "19200", "14400", "9600", "4800"})
-        BAUstr.Location = New Point(342, 36)
+        BAUstr.Location = New Point(320, 36)
         BAUstr.Name = "BAUstr"
         BAUstr.Size = New Size(70, 23)
         BAUstr.TabIndex = 8
@@ -202,9 +201,10 @@ Partial Class Form_Main
         ' 
         ' Clear
         ' 
+        Clear.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Clear.AutoSize = True
         Clear.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        Clear.Location = New Point(652, 34)
+        Clear.Location = New Point(623, 34)
         Clear.Name = "Clear"
         Clear.Size = New Size(54, 25)
         Clear.TabIndex = 5
@@ -213,19 +213,21 @@ Partial Class Form_Main
         ' 
         ' ViewMode
         ' 
+        ViewMode.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         ViewMode.FormattingEnabled = True
-        ViewMode.Items.AddRange(New Object() {"文字", "16進制"})
-        ViewMode.Location = New Point(576, 36)
+        ViewMode.Items.AddRange(New Object() {"String", "Hex"})
+        ViewMode.Location = New Point(547, 36)
         ViewMode.Name = "ViewMode"
         ViewMode.RightToLeft = RightToLeft.No
         ViewMode.Size = New Size(70, 23)
         ViewMode.TabIndex = 8
-        ViewMode.Text = "文字"
+        ViewMode.Text = "Hex"
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label1.AutoSize = True
-        Label1.Location = New Point(519, 39)
+        Label1.Location = New Point(490, 39)
         Label1.Name = "Label1"
         Label1.Size = New Size(55, 15)
         Label1.TabIndex = 6
@@ -237,7 +239,7 @@ Partial Class Form_Main
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.Disable
-        ClientSize = New Size(739, 477)
+        ClientSize = New Size(710, 489)
         Controls.Add(ViewMode)
         Controls.Add(BAUstr)
         Controls.Add(COMstr)
@@ -252,7 +254,6 @@ Partial Class Form_Main
         Controls.Add(Button7)
         Controls.Add(comport_Set)
         Controls.Add(Clear)
-        Controls.Add(Connect)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "Form_Main"
@@ -264,7 +265,6 @@ Partial Class Form_Main
     End Sub
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Connect As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents comport_info As Label
     Friend WithEvents comport_Set As Button
@@ -282,5 +282,8 @@ Partial Class Form_Main
     Friend WithEvents Clear As Button
     Friend WithEvents ViewMode As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FormToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FormDataGridViewStripMenuItem As ToolStripMenuItem
 
 End Class

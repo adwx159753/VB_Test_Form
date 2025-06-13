@@ -133,3 +133,4 @@ D:\Project\Exercise\VB\VB_Test_Form\TestForm\obj\Debug\net8.0-windows\refint\Tes
 D:\Project\Exercise\VB\VB_Test_Form\TestForm\obj\Debug\net8.0-windows\TestForm.pdb
 D:\Project\Exercise\VB\VB_Test_Form\TestForm\obj\Debug\net8.0-windows\TestForm.genruntimeconfig.cache
 D:\Project\Exercise\VB\VB_Test_Form\TestForm\obj\Debug\net8.0-windows\ref\TestForm.dll
+D:\Project\Exercise\VB\VB_Test_Form\TestForm\obj\Debug\net8.0-windows\TestForm.Form1.resources

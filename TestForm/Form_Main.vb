@@ -15,7 +15,7 @@ Public Class Form_Main
     ' Connect
     Private T As Thread
     Public RS232 As SerialPort
-    Dim receving As Boolean
+    'Dim receving As Boolean
     Dim buf_index As Byte = 0
     Dim Uart_Step As Byte = 1
     Dim ID As Byte = 0
@@ -61,6 +61,7 @@ Public Class Form_Main
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Event when the Form has been called
         LoadComPorts() ' 加載 COM Port 清單
+        ViewMode.SelectedItem = 1
         Try
             COMstr.SelectedIndex = 1
         Catch ex As Exception
@@ -76,7 +77,7 @@ Public Class Form_Main
         'If Not RS232.IsOpen Then
         '    Try
         '        RS232.Open()
-        receving = True
+        '        receving = True
         T = New Thread(AddressOf Task_Receive)
         T.IsBackground = True
         T.Start()
@@ -93,7 +94,8 @@ Public Class Form_Main
     End Sub
     ' Use Thread to run this unlimit while loop.
     Private Sub Task_Receive()
-        While receving = True
+        'While receving = True
+        While True
             If RS232.IsOpen = True Then
                 Try
                     If RS232.BytesToRead <> 0 Then
@@ -122,7 +124,7 @@ Public Class Form_Main
                                If ViewMode.SelectedIndex = 0 Then
                                    ReceiveText.AppendText(ChrW(Str))
                                Else
-                                   ReceiveText.AppendText("0x" + Str.ToString("X") + "-")
+                                   ReceiveText.AppendText("0x" + Str.ToString("X") + vbCrLf)
                                End If
 
 
@@ -180,6 +182,7 @@ Public Class Form_Main
                     End If
                     Uart_Step = 1
                     buf_index = 0
+                    Array.Clear(tmpList, 0, tmpList.Length)
                 Else
                     tmpList(buf_index) = Str
                     cksum += Str
@@ -196,39 +199,44 @@ Public Class Form_Main
     ' ------------------------------ [RS232 Control] ------------------------------|
     ' ------------------------------------------------------------------------------
     Private Sub Comport_Set_Click(sender As Object, e As EventArgs) Handles comport_Set.Click
-        RS232.Close()
-        RS232.PortName = COMstr.Text
-        RS232.BaudRate = Val(BAUstr.Text)
-        comport_info.Text = COMstr.Text + ", "
-        comport_info.Text += BAUstr.Text
-        Try
-            RS232.Open()
-        Catch ex As Exception
-            MessageBox.Show(String.Format("Comport_Set_Click: 無法開啟連接埠"))
-        Finally
-            'receving = False
-        End Try
-    End Sub
-
-    ' connect on/off
-    Private Sub Connect_Click(sender As Object, e As EventArgs) Handles Connect.Click
-
-        If RS232.IsOpen Then
-            Connect.Text = "OFF"
+        If RS232.IsOpen And (comport_info.Text = COMstr.Text + ", " + BAUstr.Text) Then
             RS232.Close()
-            'Panel5.BackColor = Color.Red
+            comport_info.Text = "Disconnect"
         Else
-            'Panel5.BackColor = Color.Lime
+            RS232.Close()
+            RS232.PortName = COMstr.Text
+            RS232.BaudRate = Val(BAUstr.Text)
+            comport_info.Text = COMstr.Text + ", "
+            comport_info.Text += BAUstr.Text
             Try
-                Connect.Text = "ON"
                 RS232.Open()
             Catch ex As Exception
-                MessageBox.Show(String.Format("Connect_Click: 無法開啟連接埠"))
+                MessageBox.Show(String.Format("Comport_Set_Click: 無法開啟連接埠"))
             Finally
                 'receving = False
             End Try
         End If
     End Sub
+
+    ' connect on/off
+    'Private Sub Connect_Click(sender As Object, e As EventArgs)
+
+    '    If RS232.IsOpen Then
+    '        Connect.Text = "OFF"
+    '        RS232.Close()
+    '        'Panel5.BackColor = Color.Red
+    '    Else
+    '        'Panel5.BackColor = Color.Lime
+    '        Try
+    '            Connect.Text = "ON"
+    '            RS232.Open()
+    '        Catch ex As Exception
+    '            MessageBox.Show(String.Format("Connect_Click: 無法開啟連接埠"))
+    '        Finally
+    '            'receving = False
+    '        End Try
+    '    End If
+    'End Sub
 
     ' 加載可用的 COM Port 到 ComboBox
     Private Sub LoadComPorts()
@@ -420,8 +428,12 @@ Public Class Form_Main
     Private Sub FormPanelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormPanelToolStripMenuItem.Click
         Form_Panel.Show()
     End Sub
+    Private Sub FormDataGridViewStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormDataGridViewStripMenuItem.Click
+        Form_Panel.Show()
+    End Sub
 
     Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
         ReceiveText.Text = ""
     End Sub
+
 End Class
