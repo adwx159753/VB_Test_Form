@@ -44,7 +44,7 @@ Public Class Form_Main
     Private send_real_way_index As Byte = 0
     Private index As Byte = 0
 
-    Dim MaxLines As Integer = 100 ' 定義最大行數
+    Dim MaxLines As Integer = 1000 ' 定義最大行數
 
     Private Sub send_struct_queue_init()
         For i = 0 To 255
@@ -96,18 +96,25 @@ Public Class Form_Main
     Private Sub Task_Receive()
         'While receving = True
         While True
-            If RS232.IsOpen = True Then
-                Try
-                    If RS232.BytesToRead <> 0 Then
-                        'Debug.WriteLine("Get!")
-                        Get_CMD()
-                    End If
-                Catch ex As Exception
-                    MessageBox.Show(String.Format("連線中斷，請重新連接"))
-                Finally
-                    'receving = False
-                End Try
-            End If
+
+            Try
+                If RS232.IsOpen = True Then
+                    Try
+                        If RS232.BytesToRead <> 0 Then
+                            'Debug.WriteLine("Get!")
+                            Get_CMD()
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show(String.Format("連線中斷，請重新連接"))
+                    Finally
+                        'receving = False
+                    End Try
+                End If
+            Catch ex As Exception
+                MessageBox.Show(String.Format("出現異常，請重新連接"))
+            Finally
+                'receving = False
+            End Try
         End While
     End Sub
 
@@ -390,12 +397,14 @@ Public Class Form_Main
     Private Sub CMD_Process(ByVal buffer As Byte())
         Rx_Counter += 1
         Select Case ID
-            Case 0 'Version Take
+            Case 0
+                'Version Take
                 Form_Panel.Get_Ver(buffer)
             Case 1
                 ' Do something
             Case 2
                 ' Do something
+                Form_Config_Setting.Get_Parameter(buffer)
         End Select
     End Sub
 
@@ -428,8 +437,8 @@ Public Class Form_Main
     Private Sub FormPanelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormPanelToolStripMenuItem.Click
         Form_Panel.Show()
     End Sub
-    Private Sub FormDataGridViewStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormDataGridViewStripMenuItem.Click
-        Form_Panel.Show()
+    Private Sub FormDataGridViewStripMenuItem_Click(sender As Object, e As EventArgs) Handles FormConfigSettingStripMenuItem.Click
+        Form_Config_Setting.Show()
     End Sub
 
     Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click

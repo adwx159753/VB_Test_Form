@@ -1,6 +1,10 @@
-﻿Public Class Form_Panel
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class Form_Panel
+    Private TextBoxList() As System.Windows.Forms.TextBox
     Private Sub Form_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.Cursor = System.Windows.Forms.Cursors.Default
+        TextBoxList = {TextBox1, TextBox2, TextBox3, TextBox4, TextBox5, TextBox6, TextBox7, TextBox8}
     End Sub
 
     ' ------------------------------------------------------------------------------
@@ -9,14 +13,9 @@
 
     Dim BottonDataBuf(8) As Byte
     Public Sub UpdateBottonDataBuf()
-        BottonDataBuf(0) = Int(TextBox1.Text)
-        BottonDataBuf(1) = Int(TextBox2.Text)
-        BottonDataBuf(2) = Int(TextBox3.Text)
-        BottonDataBuf(3) = Int(TextBox4.Text)
-        BottonDataBuf(4) = Int(TextBox5.Text)
-        BottonDataBuf(5) = Int(TextBox6.Text)
-        BottonDataBuf(6) = Int(TextBox7.Text)
-        BottonDataBuf(7) = Int(TextBox8.Text)
+        For i = 0 To 7
+            BottonDataBuf(i) = Int(TextBoxList(i).Text)
+        Next
     End Sub
 
     ' ------------------------------------------------------------------------------
@@ -350,5 +349,9 @@
         USB.CheckState = CheckState.Unchecked
         AUX.CheckState = CheckState.Unchecked
         UpdateBottonDataBuf()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
+        Form_Main.set_queue(2, 0, {})
     End Sub
 End Class

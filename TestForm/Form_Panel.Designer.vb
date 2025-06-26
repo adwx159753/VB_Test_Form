@@ -679,7 +679,7 @@ Partial Class Form_Panel
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.Disable
         CausesValidation = False
-        ClientSize = New Size(833, 269)
+        ClientSize = New Size(833, 277)
         Controls.Add(Hold)
         Controls.Add(System_Version)
         Controls.Add(Button7)
@@ -707,7 +707,6 @@ Partial Class Form_Panel
         Name = "Form_Panel"
         SizeGripStyle = SizeGripStyle.Show
         Text = "Form Panel"
-        TopMost = True
         Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
@@ -768,4 +767,8 @@ Partial Class Form_Panel
     Friend WithEvents B1_c As CheckBox
     Friend WithEvents Hold As CheckBox
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents SampleA2 As Button
+    Friend WithEvents SampleA3 As Button
+    Friend WithEvents SampleA4 As Button
 End Class

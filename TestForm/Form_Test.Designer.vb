@@ -22,63 +22,70 @@ Partial Class Form_Test
     '請勿使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        DataGridView1 = New DataGridView()
-        Button1 = New Button()
-        Label1 = New Label()
-        TextBox1 = New TextBox()
+        dgv = New DataGridView()
+        Get_Script = New Button()
+        LB_scriptResult = New Label()
+        Data_Path = New TextBox()
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label8 = New Label()
+        LB_PassCount = New Label()
+        LB_FailCount = New Label()
+        LB_LineCount = New Label()
         Label9 = New Label()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        Start_Scirpt = New Button()
+        Clear = New Button()
+        Display_Info = New Label()
+        CType(dgv, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' DataGridView1
+        ' dgv
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(11, 38)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(507, 382)
-        DataGridView1.TabIndex = 0
+        dgv.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgv.Location = New Point(11, 38)
+        dgv.Name = "dgv"
+        dgv.Size = New Size(621, 491)
+        dgv.TabIndex = 0
         ' 
-        ' Button1
+        ' Get_Script
         ' 
-        Button1.AutoSize = True
-        Button1.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        Button1.Location = New Point(11, 7)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(50, 25)
-        Button1.TabIndex = 6
-        Button1.Text = "Get"
-        Button1.UseVisualStyleBackColor = False
+        Get_Script.AutoSize = True
+        Get_Script.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        Get_Script.Location = New Point(11, 7)
+        Get_Script.Name = "Get_Script"
+        Get_Script.Size = New Size(50, 25)
+        Get_Script.TabIndex = 6
+        Get_Script.Text = "Get"
+        Get_Script.UseVisualStyleBackColor = False
         ' 
-        ' Label1
+        ' LB_scriptResult
         ' 
-        Label1.AutoSize = True
-        Label1.BorderStyle = BorderStyle.FixedSingle
-        Label1.Font = New Font("Microsoft JhengHei UI", 72F, FontStyle.Regular, GraphicsUnit.Point, CByte(136))
-        Label1.Location = New Point(529, 39)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(192, 124)
-        Label1.TabIndex = 7
-        Label1.Text = "OK"
+        LB_scriptResult.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LB_scriptResult.AutoSize = True
+        LB_scriptResult.BorderStyle = BorderStyle.FixedSingle
+        LB_scriptResult.Font = New Font("Microsoft JhengHei UI", 72F, FontStyle.Regular, GraphicsUnit.Point, CByte(136))
+        LB_scriptResult.Location = New Point(638, 38)
+        LB_scriptResult.Name = "LB_scriptResult"
+        LB_scriptResult.Size = New Size(192, 124)
+        LB_scriptResult.TabIndex = 7
+        LB_scriptResult.Text = "OK"
         ' 
-        ' TextBox1
+        ' Data_Path
         ' 
-        TextBox1.Location = New Point(74, 8)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(647, 23)
-        TextBox1.TabIndex = 8
+        Data_Path.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        Data_Path.Location = New Point(67, 8)
+        Data_Path.Name = "Data_Path"
+        Data_Path.Size = New Size(720, 23)
+        Data_Path.TabIndex = 8
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
-        Label2.Location = New Point(529, 182)
+        Label2.Location = New Point(638, 171)
         Label2.Name = "Label2"
         Label2.Size = New Size(39, 15)
         Label2.TabIndex = 9
@@ -86,9 +93,10 @@ Partial Class Form_Test
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.ForeColor = Color.Red
-        Label3.Location = New Point(529, 199)
+        Label3.Location = New Point(638, 188)
         Label3.Name = "Label3"
         Label3.Size = New Size(33, 15)
         Label3.TabIndex = 9
@@ -96,8 +104,9 @@ Partial Class Form_Test
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label4.AutoSize = True
-        Label4.Location = New Point(529, 217)
+        Label4.Location = New Point(638, 206)
         Label4.Name = "Label4"
         Label4.Size = New Size(48, 15)
         Label4.TabIndex = 9
@@ -105,85 +114,130 @@ Partial Class Form_Test
         ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label5.AutoSize = True
-        Label5.Location = New Point(529, 250)
+        Label5.Location = New Point(638, 239)
         Label5.Name = "Label5"
         Label5.Size = New Size(85, 15)
         Label5.TabIndex = 9
         Label5.Text = "Execute Time:"
         ' 
-        ' Label6
+        ' LB_PassCount
         ' 
-        Label6.AutoSize = True
-        Label6.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
-        Label6.Location = New Point(576, 182)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(38, 15)
-        Label6.TabIndex = 9
-        Label6.Text = "NULL"
+        LB_PassCount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LB_PassCount.AutoSize = True
+        LB_PassCount.ForeColor = Color.FromArgb(CByte(0), CByte(192), CByte(0))
+        LB_PassCount.Location = New Point(685, 171)
+        LB_PassCount.Name = "LB_PassCount"
+        LB_PassCount.Size = New Size(38, 15)
+        LB_PassCount.TabIndex = 9
+        LB_PassCount.Text = "NULL"
         ' 
-        ' Label7
+        ' LB_FailCount
         ' 
-        Label7.AutoSize = True
-        Label7.ForeColor = Color.Red
-        Label7.Location = New Point(576, 199)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(38, 15)
-        Label7.TabIndex = 9
-        Label7.Text = "NULL"
+        LB_FailCount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LB_FailCount.AutoSize = True
+        LB_FailCount.ForeColor = Color.Red
+        LB_FailCount.Location = New Point(685, 188)
+        LB_FailCount.Name = "LB_FailCount"
+        LB_FailCount.Size = New Size(38, 15)
+        LB_FailCount.TabIndex = 9
+        LB_FailCount.Text = "NULL"
         ' 
-        ' Label8
+        ' LB_LineCount
         ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(576, 217)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(38, 15)
-        Label8.TabIndex = 9
-        Label8.Text = "NULL"
+        LB_LineCount.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LB_LineCount.AutoSize = True
+        LB_LineCount.Location = New Point(685, 206)
+        LB_LineCount.Name = "LB_LineCount"
+        LB_LineCount.Size = New Size(38, 15)
+        LB_LineCount.TabIndex = 9
+        LB_LineCount.Text = "NULL"
         ' 
         ' Label9
         ' 
+        Label9.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label9.AutoSize = True
-        Label9.Location = New Point(624, 250)
+        Label9.Location = New Point(729, 239)
         Label9.Name = "Label9"
         Label9.Size = New Size(38, 15)
         Label9.TabIndex = 9
         Label9.Text = "NULL"
         ' 
+        ' Start_Scirpt
+        ' 
+        Start_Scirpt.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Start_Scirpt.AutoSize = True
+        Start_Scirpt.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        Start_Scirpt.Location = New Point(793, 6)
+        Start_Scirpt.Name = "Start_Scirpt"
+        Start_Scirpt.Size = New Size(50, 25)
+        Start_Scirpt.TabIndex = 10
+        Start_Scirpt.Text = "Start"
+        Start_Scirpt.UseVisualStyleBackColor = False
+        ' 
+        ' Clear
+        ' 
+        Clear.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Clear.AutoSize = True
+        Clear.BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
+        Clear.Location = New Point(11, 535)
+        Clear.Name = "Clear"
+        Clear.Size = New Size(50, 25)
+        Clear.TabIndex = 11
+        Clear.Text = "Clear"
+        Clear.UseVisualStyleBackColor = False
+        ' 
+        ' Display_Info
+        ' 
+        Display_Info.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        Display_Info.AutoSize = True
+        Display_Info.Location = New Point(67, 540)
+        Display_Info.Name = "Display_Info"
+        Display_Info.Size = New Size(75, 15)
+        Display_Info.TabIndex = 12
+        Display_Info.Text = "Display_Info"
+        ' 
         ' Form_Test
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(744, 450)
+        ClientSize = New Size(858, 567)
+        Controls.Add(Display_Info)
+        Controls.Add(Clear)
+        Controls.Add(Start_Scirpt)
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label9)
-        Controls.Add(Label8)
-        Controls.Add(Label7)
-        Controls.Add(Label6)
+        Controls.Add(LB_LineCount)
+        Controls.Add(LB_FailCount)
+        Controls.Add(LB_PassCount)
         Controls.Add(Label2)
-        Controls.Add(TextBox1)
-        Controls.Add(Label1)
-        Controls.Add(Button1)
-        Controls.Add(DataGridView1)
+        Controls.Add(Data_Path)
+        Controls.Add(LB_scriptResult)
+        Controls.Add(Get_Script)
+        Controls.Add(dgv)
         Name = "Form_Test"
-        Text = "Form1"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        Text = "Form_Test"
+        CType(dgv, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents dgv As DataGridView
+    Friend WithEvents Get_Script As Button
+    Friend WithEvents LB_scriptResult As Label
+    Friend WithEvents Data_Path As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents LB_PassCount As Label
+    Friend WithEvents LB_FailCount As Label
+    Friend WithEvents LB_LineCount As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Start_Scirpt As Button
+    Friend WithEvents Clear As Button
+    Friend WithEvents Display_Info As Label
 End Class

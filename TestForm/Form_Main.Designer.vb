@@ -33,7 +33,7 @@ Partial Class Form_Main
         Test1ToolStripMenuItem = New ToolStripMenuItem()
         FormTestToolStripMenuItem = New ToolStripMenuItem()
         FormPanelToolStripMenuItem = New ToolStripMenuItem()
-        FormDataGridViewStripMenuItem = New ToolStripMenuItem()
+        FormConfigSettingStripMenuItem = New ToolStripMenuItem()
         InputText = New TextBox()
         Button7 = New Button()
         ReceiveText = New TextBox()
@@ -111,7 +111,7 @@ Partial Class Form_Main
         ' 
         ' Test1ToolStripMenuItem
         ' 
-        Test1ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormTestToolStripMenuItem, FormPanelToolStripMenuItem, FormDataGridViewStripMenuItem})
+        Test1ToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FormTestToolStripMenuItem, FormPanelToolStripMenuItem, FormConfigSettingStripMenuItem})
         Test1ToolStripMenuItem.Name = "Test1ToolStripMenuItem"
         Test1ToolStripMenuItem.Size = New Size(48, 20)
         Test1ToolStripMenuItem.Text = "Form"
@@ -119,20 +119,20 @@ Partial Class Form_Main
         ' FormTestToolStripMenuItem
         ' 
         FormTestToolStripMenuItem.Name = "FormTestToolStripMenuItem"
-        FormTestToolStripMenuItem.Size = New Size(186, 22)
+        FormTestToolStripMenuItem.Size = New Size(191, 22)
         FormTestToolStripMenuItem.Text = "Form_Test"
         ' 
         ' FormPanelToolStripMenuItem
         ' 
         FormPanelToolStripMenuItem.Name = "FormPanelToolStripMenuItem"
-        FormPanelToolStripMenuItem.Size = New Size(186, 22)
+        FormPanelToolStripMenuItem.Size = New Size(191, 22)
         FormPanelToolStripMenuItem.Text = "Form_Panel"
         ' 
-        ' FormDataGridViewStripMenuItem
+        ' FormConfigSettingStripMenuItem
         ' 
-        FormDataGridViewStripMenuItem.Name = "FormDataGridViewStripMenuItem"
-        FormDataGridViewStripMenuItem.Size = New Size(186, 22)
-        FormDataGridViewStripMenuItem.Text = "Form_DataGridView"
+        FormConfigSettingStripMenuItem.Name = "FormConfigSettingStripMenuItem"
+        FormConfigSettingStripMenuItem.Size = New Size(191, 22)
+        FormConfigSettingStripMenuItem.Text = "Form_Config_Setting"
         ' 
         ' InputText
         ' 
@@ -141,7 +141,7 @@ Partial Class Form_Main
         InputText.Name = "InputText"
         InputText.Size = New Size(621, 23)
         InputText.TabIndex = 5
-        InputText.Text = "AT+I2SCFG=1" & vbLf & " "
+        InputText.Text = "AT+I2SCFG=1" & vbLf
         ' 
         ' Button7
         ' 
@@ -284,6 +284,6 @@ Partial Class Form_Main
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents FormToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FormDataGridViewStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FormConfigSettingStripMenuItem As ToolStripMenuItem
 
 End Class
