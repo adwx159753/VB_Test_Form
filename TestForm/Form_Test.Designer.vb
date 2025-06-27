@@ -33,7 +33,7 @@ Partial Class Form_Test
         LB_PassCount = New Label()
         LB_FailCount = New Label()
         LB_LineCount = New Label()
-        Label9 = New Label()
+        LB_Execute_Time = New Label()
         Start_Scirpt = New Button()
         Clear = New Button()
         Display_Info = New Label()
@@ -79,6 +79,7 @@ Partial Class Form_Test
         Data_Path.Name = "Data_Path"
         Data_Path.Size = New Size(720, 23)
         Data_Path.TabIndex = 8
+        Data_Path.Text = "D:\Script\Test.csv"
         ' 
         ' Label2
         ' 
@@ -154,15 +155,15 @@ Partial Class Form_Test
         LB_LineCount.TabIndex = 9
         LB_LineCount.Text = "NULL"
         ' 
-        ' Label9
+        ' LB_Execute_Time
         ' 
-        Label9.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Label9.AutoSize = True
-        Label9.Location = New Point(729, 239)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(38, 15)
-        Label9.TabIndex = 9
-        Label9.Text = "NULL"
+        LB_Execute_Time.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        LB_Execute_Time.AutoSize = True
+        LB_Execute_Time.Location = New Point(729, 239)
+        LB_Execute_Time.Name = "LB_Execute_Time"
+        LB_Execute_Time.Size = New Size(38, 15)
+        LB_Execute_Time.TabIndex = 9
+        LB_Execute_Time.Text = "NULL"
         ' 
         ' Start_Scirpt
         ' 
@@ -209,7 +210,7 @@ Partial Class Form_Test
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
-        Controls.Add(Label9)
+        Controls.Add(LB_Execute_Time)
         Controls.Add(LB_LineCount)
         Controls.Add(LB_FailCount)
         Controls.Add(LB_PassCount)
@@ -236,7 +237,7 @@ Partial Class Form_Test
     Friend WithEvents LB_PassCount As Label
     Friend WithEvents LB_FailCount As Label
     Friend WithEvents LB_LineCount As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents LB_Execute_Time As Label
     Friend WithEvents Start_Scirpt As Button
     Friend WithEvents Clear As Button
     Friend WithEvents Display_Info As Label

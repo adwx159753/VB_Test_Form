@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("TestForm"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6eea0c4cea04a25428b099fe8644df9807415732"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7f422326eecc043cd133e48f5f6911afbaa89d2"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("TestForm"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("TestForm"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

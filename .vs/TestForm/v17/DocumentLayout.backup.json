@@ -7,14 +7,6 @@
       "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_test.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_test.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_test.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
@@ -23,12 +15,20 @@
       "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_config_setting.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_config_setting.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_config_setting.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|solutionrelative:testform\\form_panel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E0CEDB8-D930-4F23-AD4C-B71B91ADF462}|TestForm\\TestForm.vbproj|d:\\project\\exercise\\vb\\vb_test_form\\testform\\form_main.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -52,14 +52,14 @@
               "RelativeDocumentMoniker": "TestForm\\Form_Test.vb",
               "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Test.vb",
               "RelativeToolTip": "TestForm\\Form_Test.vb",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAiwKAAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-26T01:20:30.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Form_Test.vb [\u8A2D\u8A08]",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Test.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Test.vb",
@@ -71,20 +71,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Form_Config_Setting.vb",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Config_Setting.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Config_Setting.vb",
               "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Config_Setting.vb",
               "RelativeToolTip": "TestForm\\Form_Config_Setting.vb",
-              "ViewState": "AgIAACcAAAAAAAAAAAAIwD0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAuwLMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-23T06:07:41.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Form_Config_Setting.vb [\u8A2D\u8A08]",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Config_Setting.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Config_Setting.vb",
@@ -96,20 +96,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form_Panel.vb",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Panel.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Panel.vb",
               "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Panel.vb",
               "RelativeToolTip": "TestForm\\Form_Panel.vb",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwCEAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-11T07:40:29.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Form_Panel.vb [\u8A2D\u8A08]",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Panel.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Panel.vb",
@@ -121,13 +121,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Form_Main.vb",
               "DocumentMoniker": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
               "RelativeDocumentMoniker": "TestForm\\Form_Main.vb",
               "ToolTip": "D:\\Project\\Exercise\\VB\\VB_Test_Form\\TestForm\\Form_Main.vb",
               "RelativeToolTip": "TestForm\\Form_Main.vb",
-              "ViewState": "AgIAAH4BAAAAAAAAAAAqwJEBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAiwGQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-28T02:20:45.734Z",
               "EditorCaption": ""

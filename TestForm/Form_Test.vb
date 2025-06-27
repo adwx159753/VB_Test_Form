@@ -4,6 +4,8 @@ Imports System.Threading.Tasks
 Imports System.Windows.Forms
 Imports System.ComponentModel.Composition.Primitives
 Imports System.Security.Cryptography
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
+Imports System.Security.Policy
 
 Public Class Form_Test
 
@@ -20,6 +22,7 @@ Public Class Form_Test
         Dim description As String
         Dim script_step As Byte
         Dim result As Boolean
+        Dim execute_time As Double
     End Structure
     Dim scr As Script
 
@@ -48,6 +51,7 @@ Public Class Form_Test
         Dim failCount As Integer = 0
 
         dgv_clear()
+        scr.execute_time = 0
 
         Try
             Using sr As New StreamReader(Data_Path.Text, Encoding.Default)
@@ -73,6 +77,7 @@ Public Class Form_Test
                     ' Set cmd
                     For Each r As String In rows
                         Script_Data_Update(r)
+                        ' Debug.WriteLine(scr.script_step)
                     Next
 
                     ' Cmd Process (also wait for delay)
@@ -89,6 +94,11 @@ Public Class Form_Test
                     rows(6) = scr.description
                     If rows.Length = dt.Columns.Count Then
                         dt.Rows.Add(rows)
+                    End If
+
+                    ' If doesn't care about expect value.
+                    If scr.expect = "" Then
+                        scr.result = True
                     End If
 
                     ' new row for dgv
@@ -165,35 +175,137 @@ Public Class Form_Test
     ' Some Command Might only need to check the value or only need to run some function.
     Private Sub Operation_CMD()
         Select Case scr.cmd
-            Case 0
+            ' Cmd < 1000 is for function operating (No setting value)
+            Case 0 ' Getting Version (Only for Test)
                 Form_Panel.Get_Arduino_Version()
-            Case 1
-                'Operation = AddressOf Form_Panel.Get_Arduino_Version
-            Case 2
-                'Operation = AddressOf Form_Panel.Get_Arduino_Version
-            Case 3
-                'Operation = AddressOf Form_Panel.Get_Arduino_Version
-            Case Else
+
+            Case 1 ' Setting Sample A1
+                Form_Config_Setting.Sending_SampleA1()
+                Form_Config_Setting.Sending()
+
+            Case 2 ' Setting Sample A2
+                Form_Config_Setting.Sending_SampleA2()
+                Form_Config_Setting.Sending()
+
+            Case 3 ' Setting Sample A3
+                Form_Config_Setting.Sending_SampleA3()
+                Form_Config_Setting.Sending()
+
+            Case 4 ' Setting Sample A4
+                Form_Config_Setting.Sending_SampleA4()
+                Form_Config_Setting.Sending()
+
+            ' Cmd 1000~2000 is for value setting only.
+            Case 1000
+                Form_Config_Setting.Sending()
+
+            Case 1001 'Country Setting
+                '0. Japan
+                '1. North America
+                '2. China
+                '3. Asia
+                '4. Latin1
+                '5. Latin2
+                '6. Brazil
+                '7. Africa/ GCC
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1002 'Antenna Setting
+                '0. Passive Antenna
+                '1. Active Antenna
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1003 ' Number of Speakers
+                '0. 4ch: w/ Fader
+                '1. 2ch: w/ o Fater
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1004 ' Steering Wheel place
+                '0. RHD:            MIC beam right
+                '1. LHD:            MIC beam left
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1005 ' Phonebook & HP related
+                '0. with phonebook
+                '1. without phonebook
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1006 ' Traffic Info for JPN
+                '0. Not JPN
+                '1. JPN Traffic Info
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1007 ' Steering Wheel Remote
+                '0. 3Key+2Key
+                '1. 2Key+1Key
+                '2. None
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1008 ' Browsing Search
+                '0. Enable
+                '1. Disable
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1009 ' Default of GEQ/Bass Tre
+                '0. Default: GEQ
+                '1. Default: Bass/ Tre
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1010 ' Default of Radio Preset
+                '0. CombinationA
+                '1. CombinationB
+                '2. CombinationC
+                '3. CombinationD
+                '4. CombinationE
+                '5. CombinationF
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            Case 1011 ' HF Parameter
+                '0. TBC
+                '1. Brank
+                Form_Config_Setting.ComboBoxList(scr.cmd - 1001).SelectedIndex = Convert.ToInt32(scr.setting)
+
+            ' Case 2000~2100 is for form displaying 
+            Case 2000 ' Showing Form_Config_Setting to init the data
+                Form_Config_Setting.Show()
+
+            Case 2001 ' Showing Form_Panel to init the data
+                Form_Panel.Show()
+
+
+            Case Else ' Unexpect CMD
                 ' Do nothing 
         End Select
+    End Sub
+
+    Private Sub Unexpect_CMD()
+        Debug.WriteLine("Unexpect CMD!")
     End Sub
 
     ' ------------------------------------------------------------------------------
     ' ------------------------------ [Get Value Field] ----------------------------|
     ' ------------------------------------------------------------------------------
     Private Function Get_Actual_CMD()
-        Dim str As String = ""
+        Dim str As String
         Select Case scr.cmd
-            Case 0
-                Form_Panel.Show() ' Will not getting actual value if doesn't open this form.
+            ' Cmd < 1000 is for function operating (No setting value)
+            Case 0 ' Getting Version (Only for Test)
                 str = Form_Panel.System_Version.Text
-            Case 1
-                str = scr.expect
-            Case 2
-                str = scr.expect
-            Case 3
-                str = scr.expect
-            Case Else
+
+            Case 1 To 4 ' Checking result: Sample A1~A4
+                str = Form_Config_Setting.Result.Text
+
+
+            ' Cmd > 1000 is for value setting only
+            Case 1001 To 1011 ' Check if the setting is complete
+                'str = Form_Config_Setting.Recevice_Parameter(scr.cmd - 1001)
+                str = Form_Config_Setting.ComboBoxList(scr.cmd - 1001).Text
+
+            Case 2000 To 2100 ' Form display, No expect Output
+                str = "Form display"
+
+            Case Else ' Unexpect CMD
+                str = "Unexpect CMD!"
                 ' Do nothing 
         End Select
         Return str
@@ -203,41 +315,36 @@ Public Class Form_Test
     ' --------------------------- [Async Function Field] --------------------------|
     ' ------------------------------------------------------------------------------
     Private Async Function Script_cmd_process() As Task(Of Boolean)
-        Select Case scr.cmd
-            Case 0
-                ' cmd 0
-                Operation = AddressOf Operation_CMD
-                GetAcual = AddressOf Get_Actual_CMD
-                scr.result = Await DelayWithConditionAsync()
-            Case 1
-                ' cmd 1
-                Operation = AddressOf Operation_CMD
-                GetAcual = AddressOf Get_Actual_CMD
-                scr.result = Await DelayWithConditionAsync()
-            Case 2
-                ' cmd 2
-                Operation = AddressOf Operation_CMD
-                GetAcual = AddressOf Get_Actual_CMD
-                scr.result = Await DelayWithConditionAsync()
-            Case 3
-                ' cmd 3
-                Operation = AddressOf Operation_CMD
-                GetAcual = AddressOf Get_Actual_CMD
-                scr.result = Await DelayWithConditionAsync()
-        End Select
+        Operation = AddressOf Operation_CMD
+        GetAcual = AddressOf Get_Actual_CMD
+        scr.result = Await DelayWithConditionAsync()
         Return scr.result
     End Function
 
-    Private Async Function DelayWithConditionAsync() As Task(Of Boolean)
+    Private Async Function DelayWithConditionAsync() As Task(Of Boolean) ' Real Processing Function
         Dim delayInterval As Integer = 100 ' Check the value every 100ms.
-        Dim elapsed As Integer = 0
+        Dim timer As Integer = 0
         Display_Info.Text = scr.description
 
-        While elapsed < scr.delay ' Max Delay
+        ' Function Pointer, operate the same function but have different result.
+        Operation() ' Operation specific function
+
+
+        While timer < scr.delay ' Max Delay
+            ' Task Delay 100ms
+            Await Task.Delay(delayInterval)
+            timer += delayInterval
+
+            ' Execute time display
+            scr.execute_time += delayInterval
+            LB_Execute_Time.Text = (scr.execute_time / 1000).ToString + "s"
+
+            If scr.expect = "" Then
+                Continue While
+            End If
 
             Try
                 ' Function Pointer, operate the same function but have different result.
-                Operation()             ' Operation specific function
                 scr.actual = GetAcual() ' Getting specific Value (string only)
             Catch
                 ' do nothing
@@ -245,13 +352,8 @@ Public Class Form_Test
                 ' do nothing
             End Try
 
-
-            ' Task Delay 100ms
-            Await Task.Delay(delayInterval)
-            elapsed += delayInterval
-
             ' Check if the actual value is same as expect value.
-            If scr.expect Is scr.actual Then
+            If scr.expect = scr.actual Then
                 Debug.WriteLine("Is True!")
                 Return True ' Condition Satisfy
             End If
@@ -268,6 +370,7 @@ Public Class Form_Test
         LB_FailCount.Text = "0"
         LB_LineCount.Text = "0"
         LB_PassCount.Text = "0"
+        LB_Execute_Time.Text = "0"
     End Sub
 
     Private Sub dgv_clear()
@@ -280,6 +383,7 @@ Public Class Form_Test
             ' do nothing
         End Try
     End Sub
+
     Private Sub script_init()
         scr.row = ""
         scr.cmd = 0
@@ -290,6 +394,7 @@ Public Class Form_Test
         scr.description = ""
         scr.script_step = 0
         scr.result = False
+        'scr.execute_time = 0
     End Sub
 
     Private Sub Delegate_Init()
@@ -298,7 +403,7 @@ Public Class Form_Test
     End Sub
 
     ' ------------------------------------------------------------------------------
-    ' --------------------------- [event Function Field] --------------------------|
+    ' --------------------------- [Event Function Field] --------------------------|
     ' ------------------------------------------------------------------------------
     Private Sub Get_Script_Click(sender As Object, e As EventArgs) Handles Get_Script.Click
         Dim openFileDialog As New OpenFileDialog()
